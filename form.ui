@@ -19,8 +19,8 @@
      <rect>
       <x>100</x>
       <y>50</y>
-      <width>400</width>
-      <height>400</height>
+      <width>450</width>
+      <height>450</height>
      </rect>
     </property>
     <property name="text">
@@ -37,27 +37,27 @@
      </rect>
     </property>
     <property name="text">
-     <string>LoadDic</string>
+     <string>LoadPIc</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
       <x>630</x>
-      <y>90</y>
+      <y>80</y>
       <width>115</width>
       <height>32</height>
      </rect>
     </property>
     <property name="text">
-     <string>TestPic</string>
+     <string>FirstSegment</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
       <x>640</x>
-      <y>140</y>
+      <y>270</y>
       <width>59</width>
       <height>16</height>
      </rect>
@@ -70,13 +70,26 @@
     <property name="geometry">
      <rect>
       <x>640</x>
-      <y>160</y>
+      <y>300</y>
       <width>59</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
      <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>110</y>
+      <width>115</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>EdgeDetector</string>
     </property>
    </widget>
   </widget>
@@ -98,7 +111,7 @@
    <sender>pushButton</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>load_dic()</slot>
+   <slot>load_pic()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>630</x>
@@ -114,7 +127,7 @@
    <sender>pushButton_2</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>test_single_pic()</slot>
+   <slot>first_segment()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>709</x>
@@ -126,9 +139,26 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>edge_detector()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>672</x>
+     <y>156</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>668</x>
+     <y>231</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
-  <slot>load_dic()</slot>
-  <slot>test_single_pic()</slot>
+  <slot>load_pic()</slot>
+  <slot>first_segment()</slot>
+  <slot>edge_detector()</slot>
  </slots>
 </ui>

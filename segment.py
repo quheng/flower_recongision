@@ -7,10 +7,10 @@ import cv2
 import numpy as np
 import pylab
 import pickle
-def grab_cut(img):
-    print "start grabCut"
-    import pdb
-    pdb.set_trace()
+def grab_cut(img, show = 1):
+    """
+    img Numpy
+    """
     mask = np.zeros(img.shape[:2], dtype = np.uint8)
     bgdmodel = np.zeros((1, 65), np.float64)
     fgdmodel = np.zeros((1, 65), np.float64)
@@ -25,6 +25,9 @@ def grab_cut(img):
     mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)
     output = cv2.bitwise_and(img, img, mask = mask)
     print "finish"
+    if (show == 1):
+        pylab.imshow(output)
+        pylab.show()
     return output, mask
 
 def edge_detec(img):
@@ -66,7 +69,7 @@ def edge_detec(img):
     edge = np.zeros((2, len(edge_x)))
     edge[0,:] = edge_x
     edge[1,:] = edge_y
-    pylab.scatter(edge[0, :],edge[1, :])
+    pylab.scatter(edge[1, :],edge[0, :])
     pylab.show()
     return edge
 
