@@ -26,8 +26,9 @@ def grab_cut(img, show = 1):
     output = cv2.bitwise_and(img, img, mask = mask)
     print "finish"
     if (show == 1):
-        pylab.imshow(output)
-        pylab.show()
+        cv2.imshow("segment", output)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
     return output, mask
 
 def edge_detec(img):
